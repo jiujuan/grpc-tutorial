@@ -1,0 +1,19 @@
+syntax = "proto3";
+//https://github.com/wuYin/grpc-modes/blob/master/README.md
+package simple;
+
+service UserService {
+    rpc GetUserInfo(UserRequest) returns (UserResponse);
+}
+
+message UserRequest {
+    int32 ID = 1;
+}
+
+message UserResponse {
+    int32 age = 2;
+    string name = 1;
+}
+// 生成 user.pb.go
+// 进入到 ./proto/simple 目录，用下面的命令生成 go 文件
+// protoc -I . --go_out=plugins=grpc:. user.proto

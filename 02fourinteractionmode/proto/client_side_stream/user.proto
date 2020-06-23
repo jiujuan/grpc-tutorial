@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package client_side_stream;
+
+//定义UserService服务
+service UserService {
+    //stream 关键字表示此函数请求时发送的是数据流
+    rpc GetUserInfo (stream UserRequest) returns (UserResponse);
+}
+
+message UserRequest {
+    int32 ID = 1;
+}
+
+message UserResponse {
+    string name = 1;
+    int32 age = 2;
+}

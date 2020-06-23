@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package server_side_stream;
+
+service UserService {
+    rpc GetUserInfo(UserRequest) returns (stream UserResponse);
+}
+
+message UserRequest {
+    int32 id = 1;
+}
+
+message UserResponse {
+    string name = 1;
+    int32 age = 2;
+}

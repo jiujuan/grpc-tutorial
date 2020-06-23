@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+//双向数据流模式
+// 客户端将连续的数据流发送到服务端，服务端返回交互的数据流
+
+package both_side_stream;
+
+service UserService {
+    rpc GetUserInfo (stream UserRequest) returns (stream UserResponse);
+}
+
+message UserRequest {
+    int32 ID = 1;
+}
+
+message UserResponse {
+    string name = 1;
+    int32 age = 2;
+}
