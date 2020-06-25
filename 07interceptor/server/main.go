@@ -22,6 +22,22 @@ func (h *Hello) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloRes
     return &pb.HelloResponse{Message: "Server send words: " + in.Name}, nil
 }
 
+func UnaryServerInterceptor(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo,
+                      handler grpc.UnaryHandler) (interface{}, error) {
+    log.Printf("before handling. Info: %+v", info)
+    resp, err := handler(ctx, req)
+    log.Println("after handling. resp: ", resp)
+    return resp, err
+}
+
+func StreamServerInterceptor(srv interface{}, ss grpc.ServerStream, info *grpc.StreamServerInfo,
+      handler grpc.StreamHandler) error {
+    log.Printf("before handling. Info: %+v", info)
+    err := handler(srv, ss)
+    log.Println("after handling. err: ", err)
+    return err
+}
+
 func main() {
     listen, err := net.Listen("tcp", Address)
     if err != nil {
@@ -29,7 +45,7 @@ func main() {
     }
     log.Println("Listen on  ", Address)
 
-    s := grpc.NewServer()
+    s := grpc.NewServer(grpc.StreamInterceptor(StreamServerInterceptor), grpc.UnaryInterceptor(UnaryServerInterceptor))
 
     pb.RegisterHelloServer(s, &Hello{})
 
