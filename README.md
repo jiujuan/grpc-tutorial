@@ -1,1 +1,2 @@
-# hello-go-grpc-tutorial
+# grpc-tutorial
+hello, goang grpc tutorial
