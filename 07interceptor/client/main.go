@@ -4,7 +4,7 @@ import (
     "context"
     "google.golang.org/grpc"
     "google.golang.org/grpc/grpclog"
-    pb "grpc-tutorial/06auth/proto/hello"
+    pb "grpc-tutorial/07interceptor/proto/hello"
     "log"
     "strings"
 )
