@@ -14,8 +14,10 @@ const (
 )
 
 func main() {
-    // TLS连接
-    creds, err := credentials.NewClientTLSFromFile("../keys/server.pem", "gprc-auth-name")
+    // credentials.NewClientTLSFromFile函数是从文件为服务器构造证书对象，
+    // 然后通过grpc.WithTransportCredentials(creds)函数将证书包装为选项后作为参数传入grpc.Dial函数
+    // 在客户端基于服务器的证书和服务器名字就可以对服务器进行验证
+    creds, err := credentials.NewClientTLSFromFile("./keys/server.pem", "gprc-auth-name")
     if err != nil {
         grpclog.Fatalf("failed to create TLS credentials %v ", err)
     }

@@ -28,8 +28,8 @@ func main() {
         grpclog.Fatalf("failed to listen : %v", err)
     }
     log.Println("Listen on  ", Address)
-    //TLS 认证
-    creds, err := credentials.NewServerTLSFromFile("../keys/server.pem", "../keys/server.key")
+    //TLS
+    creds, err := credentials.NewServerTLSFromFile("./keys/server.pem", "./keys/server.key")
     if err != nil {
         grpclog.Fatalf("failed to generate credentials %v", err)
     }
