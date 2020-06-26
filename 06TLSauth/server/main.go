@@ -5,7 +5,7 @@ import (
     "google.golang.org/grpc"
     "google.golang.org/grpc/credentials"
     "google.golang.org/grpc/grpclog"
-    pb "grpc-tutorial/06auth/proto/hello"
+    pb "grpc-tutorial/06TLSauth/proto/hello"
     "log"
     "net"
 )
