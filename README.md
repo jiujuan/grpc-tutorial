@@ -1,2 +1,2 @@
 # grpc-tutorial
-hello, goang grpc tutorial
+hello, golang grpc tutorial
