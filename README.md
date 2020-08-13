@@ -14,7 +14,15 @@ hello, golang grpc tutorial
 - [Golang gRPC学习(08): go-grpc-middleware](https://github.com/jiujuan/zenblog/blob/master/content/golang-grpc-middleware-8.md)
 
 ## 代码整理
-- [01hello](https://github.com/jiujuan/grpc-tutorial/tree/master/01hello)
-- [02fourinteractionmode](https://github.com/jiujuan/grpc-tutorial/tree/master/02fourinteractionmode)
-- [03customer](https://github.com/jiujuan/grpc-tutorial/tree/master/03customer)
-- [04deadlines ](https://github.com/jiujuan/grpc-tutorial/tree/master/04deadlines)
+- [01hello](https://github.com/jiujuan/grpc-tutorial/tree/master/01hello) grpc helloworld
+- [02fourinteractionmode](https://github.com/jiujuan/grpc-tutorial/tree/master/02fourinteractionmode) grpc 四种传输方式
+- [03customer](https://github.com/jiujuan/grpc-tutorial/tree/master/03customer) grpc 一个小练习demo
+- [04deadlines ](https://github.com/jiujuan/grpc-tutorial/tree/master/04deadlines) grpc 超时限制
+- [05retry](https://github.com/jiujuan/grpc-tutorial/tree/master/05retry) grpc 重试
+- [06TLSauth](https://github.com/jiujuan/grpc-tutorial/tree/master/06TLSauth) grpc auth/TLS
+- [07interceptor](https://github.com/jiujuan/grpc-tutorial/tree/master/07interceptor) grpc 拦截器
+- [08middleware](https://github.com/jiujuan/grpc-tutorial/tree/master/08middleware) grpc 中间件
+
+- [09basicetcd/basic](https://github.com/jiujuan/grpc-tutorial/tree/master/09basicetcd/basic)  etcd的demo
+
+- [10jaegerdemo/simple](https://github.com/jiujuan/grpc-tutorial/tree/master/10jaegerdemo/simple) 链路追踪 jaeger的demo
